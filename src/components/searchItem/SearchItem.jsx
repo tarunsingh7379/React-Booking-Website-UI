@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./searchItem.css";
 const SearchItem = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/hotels/a");
+  };
   return (
     <div className="searchItem">
       <img
@@ -30,7 +36,9 @@ const SearchItem = () => {
         <div className="siDetailTexts">
           <span className="siPrice">$123</span>
           <span className="siTextOp">Includes taxes and fees</span>
-          <button className="siCheckButton">See availability</button>
+          <button onClick={handleClick} className="siCheckButton">
+            See availability
+          </button>
         </div>
       </div>
     </div>
